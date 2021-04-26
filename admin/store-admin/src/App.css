@@ -1,0 +1,45 @@
+.nav-holder{
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(93,60,43,1) 0%, rgba(132,84,60,1) 47%, rgba(175,110,78,1) 100%); 
+  height: 100vh ;
+ 
+}
+.accordion , .accordion-item , .accordion-header , .accordion-button   {
+  background-color: transparent;
+  border: 0;
+}
+.accordion-body{
+  background-color: transparent;
+}
+.accordion-header.active , .accordion-button {
+  background-color: transparent !important;
+}
+.nav-link , .active  {
+  color: #fff;
+}
+.nav-link:hover{
+  color: rgb(219, 219, 219);
+}
+.store-name , .store-page{
+  color: #fff;
+}
+
+.editor{
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+.nav-item a{
+  color: #fff;
+}
+
+
+.add-product{
+  border-radius: 24px;
+}
+img{
+  height: 30vh ;
+}
+
+.img-modal{
+  height: 50vh;
+}
