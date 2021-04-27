@@ -35,10 +35,12 @@ public class AdminService {
 		return sectionsList;
 	}
 	public void deleteSection(UUID section_id) {
-		
+		sectionDao.deleteById(section_id);
 	}
 	public void updateSection(Section s) {
-		
+		//System.out.println(s.getSectionId());
+		//sectionDao.findById(s.getSectionId());
+		sectionDao.save(s);
 	}
 	public ArrayList <Product> getSection(UUID sectionID){
 		ArrayList<Product> products = null ; 

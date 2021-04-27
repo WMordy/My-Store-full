@@ -45,6 +45,14 @@ public class Section {
 		this.pageID = pageID ;
 		
 	}
+	public Section(@JsonProperty String slogan, @JsonProperty int pageID, @JsonProperty String name, @JsonProperty UUID sectionId) {
+		super();
+		this.sectionId = sectionId;
+		this.name = name ;
+		this.slogan = slogan ;
+		this.pageID = pageID ;
+		
+	}
 	public UUID getSectionId() {
 		return sectionId;
 	}
