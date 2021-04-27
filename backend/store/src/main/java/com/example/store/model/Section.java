@@ -53,6 +53,12 @@ public class Section {
 		this.pageID = pageID ;
 		
 	}
+	public Section( @JsonProperty UUID sectionId) {
+		super();
+		this.sectionId = sectionId;
+		
+		
+	}
 	public UUID getSectionId() {
 		return sectionId;
 	}

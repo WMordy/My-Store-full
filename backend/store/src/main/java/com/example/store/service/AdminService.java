@@ -34,8 +34,11 @@ public class AdminService {
 		});
 		return sectionsList;
 	}
-	public void deleteSection(UUID section_id) {
-		sectionDao.deleteById(section_id);
+	public void deleteSection(UUID id) {
+		//System.out.println(sectionDao.findById(id).toString());
+		//Section s = sectionDao.findById(id).orElseThrow();
+		//System.out.println(s.getName());
+		sectionDao.deleteById(id);
 	}
 	public void updateSection(Section s) {
 		//System.out.println(s.getSectionId());
