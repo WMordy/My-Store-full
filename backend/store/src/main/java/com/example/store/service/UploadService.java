@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
@@ -40,16 +41,10 @@ public class UploadService {
     }
 	public String storeFile(MultipartFile file)  {
 		         String originalFileName = StringUtils.cleanPath(file.getOriginalFilename());
-		         String fileName = "";
-		                	 
-		            
-
-		             try {
-	
-		             } catch(Exception e) {
-             }
-
-		             fileName = originalFileName;
+		         String fileName = String.valueOf(new Date().toInstant().getEpochSecond());
+		        
+		         
+		             fileName += "_" + originalFileName ;
 		             Path targetLocation = this.fileStorageLocation.resolve(fileName);	
 		             try {
 						Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
