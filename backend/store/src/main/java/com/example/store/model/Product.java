@@ -20,6 +20,7 @@ public class Product {
 	private String nomProduct ;
 	private String description ;
 	private double prix ;
+	private String imageURL ;
 	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
 	    @JoinColumn(name = "sectionId", nullable = false)
 	 private Section section ;
