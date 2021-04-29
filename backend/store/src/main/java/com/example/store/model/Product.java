@@ -2,13 +2,20 @@ package com.example.store.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -16,14 +23,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Table
 public class Product {
 	@Id
-	private UUID productId;
-	private String nomProduct ;
+	@Column( unique=true, nullable=false) 
+	
+	private UUID productId = UUID.randomUUID();
+	private String title ;
 	private String description ;
-	private double prix ;
+	private double price ;
 	private String imageURL ;
 	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
 	    @JoinColumn(name = "sectionId", nullable = false)
+	@JsonIgnore
 	 private Section section ;
+	 @Column(  nullable=true) 
 	private ArrayList<Hashtag> hashtags;
 	
 	
@@ -31,28 +42,44 @@ public class Product {
 	public UUID getProductId() {
 		return productId;
 	}
-	public Product(UUID productId, String nom, String description, double prix) {
-		super();
-		this.productId = productId;
-		this.nomProduct = nom;
-		this.description = description;
-		this.prix = prix;
-	}
-	public Product(@JsonProperty String title,@JsonProperty Double price ,@JsonProperty String Description) {
-		this.productId = UUID.randomUUID();
-		this.nomProduct = title;
-		this.description = Description ;
-		this.prix = price;
+
+	
+
+	public Product( ) {
 		
 	}
+
+
+	
+	public Section getSection() {
+		return section;
+	}
+	public void setSection(Section section) {
+		this.section = section;
+	}
+	 public  Product(@JsonProperty String title,@JsonProperty double price ,@JsonProperty String description,@JsonProperty String imageURL) {
+		
+		this.productId = UUID.randomUUID();
+		this.title = title;
+		this.description = description ;
+		this.price = price;
+		this.imageURL = imageURL ;
+	}
+	
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", title=" + title + ", description=" + description + ", price="
+				+ price + ", imageURL=" + imageURL + ", section=" + section + "]";
+	}
+
 	public void setProductId(UUID productId) {
 		this.productId = productId;
 	}
 	public String getNom() {
-		return nomProduct;
+		return title;
 	}
 	public void setNom(String nom) {
-		this.nomProduct = nom;
+		this.title = nom;
 	}
 	public String getDescription() {
 		return description;
@@ -61,10 +88,10 @@ public class Product {
 		this.description = description;
 	}
 	public double getPrix() {
-		return prix;
+		return price;
 	}
 	public void setPrix(double prix) {
-		this.prix = prix;
+		this.price = prix;
 	}
 	
 	

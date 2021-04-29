@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -30,6 +31,7 @@ public class Section {
 	private String name ;
 	@OneToMany(mappedBy = "section", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+	
 	private List<Product> productsList ;
 	
 	
