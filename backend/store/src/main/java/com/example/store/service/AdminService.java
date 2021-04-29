@@ -83,12 +83,23 @@ public class AdminService {
 		return productList ;
 	}
 	
-	public void UpdateProduct(Product p) {
+	public void UpdateProduct(Product p,UUID sectionID) {
+		Section s = sectionDao.findById(sectionID).orElse(null);
+		if(s!=null) {
+			p.setSection(s);
+			productDao.save(p);
+		}
+		else {
+			System.out.println("cant find section");
+		}
+		productDao.save(p);
+		
+		
 		
 	}
 	
 	public void  DeleteProduct(UUID id) {
-		
+		productDao.deleteById(id);
 	}
 	
 	

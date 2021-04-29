@@ -65,6 +65,13 @@ public class Product {
 		this.price = price;
 		this.imageURL = imageURL ;
 	}
+	 public  Product(@JsonProperty String title,@JsonProperty UUID productID,@JsonProperty double price ,@JsonProperty String description,@JsonProperty String imageURL) {
+		this.productId = productID;
+		this.title = title;
+		this.description = description ;
+		this.price = price;
+		this.imageURL = imageURL ;
+	}
 	
 	@Override
 	public String toString() {
