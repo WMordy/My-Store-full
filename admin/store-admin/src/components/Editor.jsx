@@ -4,12 +4,12 @@ import EditSection from './EditSection'
 import Product from './Product'
 
 export default function Editor(props) {
-  
+
     return (
         <div className="container-fluid editor">
             <div className="row justify-content-center  pt-3 ">
                 <div className="col-12 text-center " >
-                    <h2>{props.owner.section}</h2>
+                    <h2>{props.owner.section.name}</h2>
                 </div>
 
 
@@ -40,7 +40,7 @@ export default function Editor(props) {
             </div>
             <div className=" py-5">
                 <div>
-                    <EditSection/>
+                    <EditSection />
                 </div>
             </div>
         </div>

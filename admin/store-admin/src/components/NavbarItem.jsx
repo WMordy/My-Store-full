@@ -15,7 +15,7 @@ export default function NavbarItem(props) {
             <div className="accordion-body">
               <nav className="nav flex-column">
                 {props.sections.map((section,index)=>{
-                  return <a className="nav-link " aria-current="page" key={index}  onClick = {()=>changeEditorSection(props.id,section.sectionId)}>{section.name}</a>
+                  return <a className="nav-link " aria-current="page" key={index}  onClick = {()=>changeEditorSection(props.id,section)}>{section.name}</a>
                 })}
                
 
