@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AddProduct from './AddProduct'
 import EditSection from './EditSection'
 import Product from './Product'
 
-export default function Editor() {
+export default function Editor(props) {
+  
     return (
         <div className="container-fluid editor">
             <div className="row justify-content-center  pt-3 ">
                 <div className="col-12 text-center " >
-                    <h2>Men's page Edit</h2>
+                    <h2>{props.owner.section}</h2>
                 </div>
 
 

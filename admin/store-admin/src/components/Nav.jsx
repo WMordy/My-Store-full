@@ -2,85 +2,18 @@ import React from 'react'
 import AddSection from './AddSection'
 import NavbarItem from './NavbarItem'
 
-export default function Nav() {
-  var sections = [
-    [
-      {
-        "id": 1,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 2,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 3,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-    ],
-    [
-      {
-        "id": 1,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 2,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 3,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-    ],
-    [
-      {
-        "id": 1,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 2,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 3,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-    ],
-    [
-      {
-        "id": 1,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 2,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-      {
-        "id": 3,
-        "name": "nom section",
-        "slogan": "slogan section"
-      },
-    ],
-  ]
+export default function Nav(props) {
+  var sections = props.sectionsList
    
   return (
     <div>
       <h3 className="store-name py-2" >My store</h3>
       <div className="accordion" id="accordionExample">
-      <NavbarItem id = {5}/>
-      <NavbarItem id = {6}/>
-      <NavbarItem id = {3}/>
+        
+      <NavbarItem title = "Home" id = {0} sections = {props.sectionsList}  changeOwner = {props.changeOwner}/>
+      <NavbarItem  title = "Women" id = {1} sections = {props.sectionsList} changeOwner = {props.changeOwner}/>
+      <NavbarItem  title = "Kids" id = {2} sections = {props.sectionsList} changeOwner = {props.changeOwner}/>
+      <NavbarItem  title = "Men" id = {3} sections = {props.sectionsList} changeOwner = {props.changeOwner}/>
       <AddSection/>
        {/*  <div className="accordion-item">
          
