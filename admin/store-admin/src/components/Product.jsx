@@ -36,7 +36,7 @@ export default function Product(props) {
                                                             <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div className="col-lg-4">
                                                         <div className="input-group mb-3">
                                                             <span className="input-group-text" id="inputGroup-sizing-default">price</span>
@@ -48,14 +48,14 @@ export default function Product(props) {
                                                 </div>
                                                 <div className="row justify-content-center">
                                                     <div className="col-lg-8">
-                                                    <div className="input-group">
-  <span className="input-group-text">Description</span>
-  <textarea className="form-control" aria-label="With textarea" defaultValue={""} />
-</div>
+                                                        <div className="input-group">
+                                                            <span className="input-group-text">Description</span>
+                                                            <textarea className="form-control" aria-label="With textarea" defaultValue={""} />
+                                                        </div>
 
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>

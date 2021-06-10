@@ -1,6 +1,14 @@
 import React from 'react'
-
+import { useDispatch } from 'react-redux'
+import addProduct from '../actions/productAction'
 export default function AddProduct(props) {
+     const dispatch = useDispatch() 
+     const AddIt = ()=>{
+         dispatch(addProduct({
+             name : "product 1",
+             price : "100"
+         }))
+     }
     return (
         <div>
             <div>
@@ -66,7 +74,7 @@ export default function AddProduct(props) {
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-primary">Save</button>
+                                <button type="button" className="btn btn-primary" onClick = {AddIt}>Save</button>
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                             </div>
